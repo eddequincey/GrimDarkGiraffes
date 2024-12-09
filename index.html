@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random British Spy TV Show Name Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        button {
+            padding: 5px 10px;
+            font-size: 14px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .name {
+            font-size: 52px;
+            margin-top: 10px;
+		font-weight:bold;
+        }
+        .logo {
+            margin-bottom: 0px;
+width:40%;
+Height:40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <div class="name" id="name"></div>
+        <button onclick="generateRandomName()">Generate Name</button>
+    </div>
+
+    <script>
+        function getRandomElement(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function generateRandomName() {
+            const adjectives = ["Dark", "Grim", "Bleak", "Sinister", "Gloomy", "Ominous", "Dreadful", "Haunting", "Mysterious", "Eerie", "Foreboding", "Macabre", "Morbid", "Spooky", "Creepy", "Menacing", "Terrifying", "Chilling", "Ghastly", "Shadowy", "Wicked", "Malevolent", "Vengeful", "Brooding", "Desolate", "Forsaken", "Horrific", "Nightmarish", "Phantom", "Spectral", "Uncanny", "Vile", "Wretched", "Baleful", "Cursed", "Demonic", "Evil", "Frightening", "Gruesome", "Hellish", "Infernal", "Lurid", "Malignant", "Nefarious", "Pernicious", "Ruthless", "Savage", "Torturous", "Vicious", "Wrathful", "Abyssal", "Blighted", "Cataclysmic", "Doomed", "Enigmatic", "Fatal", "Grimdark", "Harrowing", "Insidious", "Jinxed", "Killer", "Lethal", "Malevolent", "Noxious", "Obscure", "Perilous", "Quagmire", "Rancorous", "Sanguine", "Tainted", "Unholy", "Venomous", "Wicked", "Accursed", "Baneful", "Calamitous", "Deadly", "Eldritch", "Feral", "Gory", "Hateful", "Infernal", "Jarring", "Knavish", "Lurid", "Malefic", "Noxious", "Ominous", "Pernicious", "Quixotic", "Ruthless", "Savage", "Toxic", "Unforgiving", "Vengeful", "Wicked", "Zealous"];
+            const animals = ["Horses", "Doves", "Lions", "Wolves", "Eagles", "Tigers", "Bears", "Owls", "Foxes", "Hawks", "Panthers", "Ravens", "Sharks", "Snakes", "Whales", "Zebras", "Cheetahs", "Falcons", "Gorillas", "Jaguars", "Leopards", "Pumas", "Raccoons", "Seals", "Wolverines", "Buffaloes", "Camels", "Deer", "Elephants", "Flamingos", "Giraffes", "Hippos", "Iguanas", "Kangaroos", "Lemurs", "Moose", "Narwhals", "Otters", "Penguins", "Quokkas", "Rhinoceroses", "Sloths", "Turtles", "Urchins", "Vultures", "Walruses", "Xerus", "Yaks", "Alpacas", "Baboons", "Cranes", "Dolphins", "Emus", "Ferrets", "Geese", "Hedgehogs", "Ibises", "Jackals", "Koalas", "Lynxes", "Manatees", "Newts", "Ocelots", "Peacocks", "Quails", "Rats", "Salamanders", "Tapirs", "Uakaris", "Vipers", "Wombats", "Xenops", "Yabbies", "Antelopes", "Badgers", "Chameleons", "Dingoes", "Echidnas", "Frogs", "Gazelles", "Herons", "Inchworms", "Jellyfish", "Kiwis", "Lobsters", "Mice", "Nightingales", "Octopuses", "Parrots", "Quetzals", "Rabbits", "Squirrels", "Toads", "Urials", "Voles", "Weasels", "Xenarthrans", "Yellowjackets", "Zorillas"];
+
+            const randomAdjective = getRandomElement(adjectives);
+            const randomAnimal = getRandomElement(animals);
+
+            const name = `${randomAdjective} ${randomAnimal}`;
+            document.getElementById('name').innerText = name;
+        }
+
+        // Generate a name when the page loads
+        window.onload = generateRandomName;
+    </script>
+</body>
+</html>
